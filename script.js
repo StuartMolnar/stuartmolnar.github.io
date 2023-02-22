@@ -16,7 +16,6 @@ fetch(url)
     return response.json()
    }).then(body => {
 
-    var data = JSON.parse(body);
     console.log(body);
     console.log(data);
    }
