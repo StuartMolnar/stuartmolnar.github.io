@@ -9,7 +9,7 @@
 
 
 
-let url = 'http://134.122.89.248:8080/proxy/historicjoa?PageSize=10&PageNumber=2&PositionSeries=2210&StartPositionOpenDate=10-01-2015&EndPositionOpenDate=09-30-2016';
+let url = 'https://usajobs-cors-proxy.westus3.cloudapp.azure.com:443/proxy/historicjoa?PageSize=10&PageNumber=2&PositionSeries=2210&StartPositionOpenDate=10-01-2015&EndPositionOpenDate=09-30-2016';
 
 fetch(url)
   .then(response => {
