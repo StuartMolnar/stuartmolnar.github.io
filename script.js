@@ -1,33 +1,14 @@
-            
-// request({     
-//     url: 'https://data.usajobs.gov/api/historicjoa?PageSize=10&PageNumber=2&PositionSeries=2210&StartPositionOpenDate=10-01-2015&EndPositionOpenDate=09-30-2016',     
-//     method: 'GET' 
-// }, function(error, response, body) {     
-//     var data = JSON.parse(body); 
-//     console.log(data);
-// });
+let url = 'https://usajobs-cors-proxy.westus3.cloudapp.azure.com:8443/proxy/historicjoa?PageSize=1000&PageNumber=2&PositionSeries=2210&StartPositionOpenDate=10-01-2015&EndPositionOpenDate=09-30-2016';
 
-
-console.log('accessing data...');
-
-let url = 'https://usajobs-cors-proxy.westus3.cloudapp.azure.com:443/proxy/historicjoa?PageSize=10&PageNumber=2&PositionSeries=2210&StartPositionOpenDate=10-01-2015&EndPositionOpenDate=09-30-2016';
+console.log('accessing api...');
 
 fetch(url)
   .then(response => {
     return response.json()
    }).then(body => {
 
-    var data = JSON.parse(body);
-    console.log(body);
-    console.log(data);
+    console.log('type:', typeof(body));
+    console.log('body:', body);
+    console.log('data:', body.data[0])
    }
 );
-
-// var request = require('request');    
-            
-// request({     
-//     url: 'https://data.usajobs.gov/api/historicjoa?PageSize=10&PageNumber=2&PositionSeries=2210&StartPositionOpenDate=10-01-2015&EndPositionOpenDate=09-30-2016',     
-//     method: 'GET' 
-// }, function(error, response, body) {     
-//     var data = JSON.parse(body); 
-// });
