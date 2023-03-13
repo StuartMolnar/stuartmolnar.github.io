@@ -146,6 +146,10 @@ video {
   object-fit: cover;
 }
 
+#hamburger-button {
+  transform: scale(2);
+}
+
 
 #services-description-background {
     background-image: url('../images/services-background-2.png');
