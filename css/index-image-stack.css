@@ -43,36 +43,6 @@
 }
 
 
-/* --- Sliding Animation --- */
-
-/* @keyframes slide-from-left {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-
-@keyframes slide-from-right {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-
-.index-child-1{
-  animation: slide-from-left 1s ease-out forwards;
-}
-.index-child-2 {
-  animation: slide-from-right 1s ease-out forwards;
-} */
-/* ---------------------------- */
-
 .index-parent {
   overflow: hidden;
 }
