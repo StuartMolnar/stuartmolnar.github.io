@@ -41,7 +41,7 @@ html {
   -moz-tab-size: 4;
   /* 3 */
   -o-tab-size: 4;
-  tab-size: 4;
+     tab-size: 4;
   /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
@@ -82,7 +82,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 /*
@@ -815,7 +815,7 @@ video {
 
 .columns-2 {
   -moz-columns: 2;
-  columns: 2;
+       columns: 2;
 }
 
 .grid-cols-8 {
@@ -844,10 +844,6 @@ video {
 
 .flex-col {
   flex-direction: column;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
 }
 
 .place-items-end {
@@ -888,7 +884,7 @@ video {
 
 .gap-x-3 {
   -moz-column-gap: 0.75rem;
-  column-gap: 0.75rem;
+       column-gap: 0.75rem;
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -934,7 +930,7 @@ video {
 
 .object-cover {
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .p-3 {
@@ -1095,6 +1091,15 @@ video {
   text-underline-offset: 4px;
 }
 
+.invert {
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .text-white {
   color: var(--clr-white);
 }
@@ -1122,43 +1127,43 @@ video {
 .fs-heading-1 {
   font-size: var(--fs-heading-1);
   font-style: var(--ff-header);
-  line-height: calc(var(--fs-heading-1) * 1.2);
+  line-height: 1.2;
 }
 
 .fs-heading-2 {
   font-size: var(--fs-heading-2);
   font-style: var(--ff-header);
-  line-height: calc(var(--fs-heading-2) * 1.2);
+  line-height: 1.2
 }
 
 .fs-heading-3 {
   font-size: var(--fs-heading-3);
   font-style: var(--ff-header);
-  line-height: calc(var(--fs-heading-3) * 1.2);
+  line-height: 1.2;
 }
 
 .fs-heading-4 {
   font-size: var(--fs-heading-4);
   font-style: var(--ff-header);
-  line-height: calc(var(--fs-heading-4) * 1.2);
+  line-height: 1.2;
 }
 
 .fs-checkmark-text {
   font-size: var(--fs-checkmark-text);
   font-style: var(--ff-body);
-  line-height: calc(var(--fs-checkmark-text) * 1.2);
+  line-height: 1.5;
 }
 
 .fs-body {
   font-size: var(--fs-body);
   font-style: var(--ff-body);
-  line-height: calc(var(--fs-body) * 1.2);
+  line-height: 1.5;
 }
 
 .fs-nav {
   font-size: var(--fs-nav);
   font-style: var(--ff-body);
-  line-height: calc(var(--fs-nav) * 1.2);
+  line-height: 1.2;
 }
 
 .fs-button {
@@ -1425,7 +1430,7 @@ video {
 
   .sm\:columns-4 {
     -moz-columns: 4;
-    columns: 4;
+         columns: 4;
   }
 
   .sm\:grid-cols-12 {
@@ -1495,7 +1500,7 @@ video {
   .md\:fs-heading-2 {
     font-size: var(--fs-heading-2);
     font-style: var(--ff-header);
-    line-height: calc(var(--fs-heading-2) * 1.2);
+    line-height: 1.2
   }
 }
 
@@ -1518,7 +1523,7 @@ video {
 
   .lg\:columns-5 {
     -moz-columns: 5;
-    columns: 5;
+         columns: 5;
   }
 }
 
