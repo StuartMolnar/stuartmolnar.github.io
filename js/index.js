@@ -67,24 +67,23 @@ if (window.innerWidth <= 640) {
   });
 }
 
-// /* Set index video height */
-// const navbar = document.getElementById('navbar-full');
-// const videoContainer = document.querySelector('.video-container');
-// const heroSection = document.getElementById('index-hero');
+function setHeroAndVideoHeight() {
+  // Get the height of navbar-max
+  const navbarMax = document.getElementById('navbar-max');
+  const navbarMaxHeight = navbarMax.offsetHeight;
 
-// const navbarHeight = navbar.offsetHeight;
+  // Set the height of video-container and index-hero to fill the rest of the viewport
+  const videoContainer = document.querySelector('.video-container');
+  const indexHero = document.querySelector('#index-hero');
+  videoContainer.style.height = `calc(100vh - ${navbarMaxHeight}px)`;
+  videoContainer.style.top = `${navbarMaxHeight}px`; /* Set the top position to the height of the navbar */
+  indexHero.style.height = `calc(100vh - ${navbarMaxHeight}px)`;
+}
 
-// function setVideoHeight() {
-//   const viewportHeight = window.innerHeight;
-//   heroSection.style.height = `${viewportHeight - navbarHeight}px`;
-// }
 
-// // set initial video height
-// setVideoHeight();
-
-// // update video height on window resize
-// window.addEventListener('resize', setVideoHeight);
-
+// Call the function on load and on resize
+window.addEventListener('load', setHeroAndVideoHeight);
+window.addEventListener('resize', setHeroAndVideoHeight);
 
 /* Divs Animation */
 const indexChild1 = document.querySelectorAll('.index-child-1');
