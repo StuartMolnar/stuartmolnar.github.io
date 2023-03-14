@@ -67,23 +67,23 @@ if (window.innerWidth <= 640) {
   });
 }
 
-/* Set index video height */
-const navbar = document.getElementById('navbar-full');
-const videoContainer = document.querySelector('.video-container');
-const heroSection = document.getElementById('index-hero');
+// /* Set index video height */
+// const navbar = document.getElementById('navbar-full');
+// const videoContainer = document.querySelector('.video-container');
+// const heroSection = document.getElementById('index-hero');
 
-const navbarHeight = navbar.offsetHeight;
+// const navbarHeight = navbar.offsetHeight;
 
-function setVideoHeight() {
-  const viewportHeight = window.innerHeight;
-  heroSection.style.height = `${viewportHeight - navbarHeight}px`;
-}
+// function setVideoHeight() {
+//   const viewportHeight = window.innerHeight;
+//   heroSection.style.height = `${viewportHeight - navbarHeight}px`;
+// }
 
-// set initial video height
-setVideoHeight();
+// // set initial video height
+// setVideoHeight();
 
-// update video height on window resize
-window.addEventListener('resize', setVideoHeight);
+// // update video height on window resize
+// window.addEventListener('resize', setVideoHeight);
 
 
 /* Divs Animation */
