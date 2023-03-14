@@ -161,7 +161,7 @@
   background-color: #232341;
 
   --top-div-height: 300px;
-  --bot-div-height: 550px;
+  --bot-div-height: 600px;
   --bot-width: 100%;
   --top-div-offset: 25px;
   --top-width: calc(100% - (var(--top-div-offset) * 2));

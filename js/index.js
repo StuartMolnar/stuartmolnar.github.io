@@ -83,7 +83,7 @@ function setHeroAndVideoHeight() {
 
 // Call the function on load and on resize
 window.addEventListener('load', setHeroAndVideoHeight);
-window.addEventListener('resize', setHeroAndVideoHeight);
+//window.addEventListener('resize', setHeroAndVideoHeight);
 
 /* Divs Animation */
 const indexChild1 = document.querySelectorAll('.index-child-1');
