@@ -23,7 +23,6 @@
     <script defer src="js/index.js"></script>
 </head>
 <body onload="initMobileMenu(); initNavbarSpacer(); initNavbarMinimizer();" class="min-h-screen max-w-[100%] bg-white-off text-black-accent fs-body">
-  hello
   <div id="navbar-spacer"></div>
 
   <header id="navbar-full" class="text-black fs-nav fw-400 bg-white-off index-navbar">
@@ -84,13 +83,13 @@
   
   <main>
 
+    <div class="video-container">
+      <video autoplay muted loop preload="auto">
+        <source src="images/hero-video.mp4" type="video/mp4">
+      </video>
+    </div>
     <section id="index-hero" class="flex flex-col justify-center p-6 text-white sm:px-0">
-      <div class="video-container">
-        <video autoplay muted loop preload="auto">
-          <source src="images/hero-video.mp4" type="video/mp4">
-        </video>
-      </div>
-      <container id="index-content" class="mx-6 sm:mx-0">
+       <container id="index-content" class="mx-6 sm:mx-0">
         <div class="grid grid-cols-12 my-6">
           <div class="hidden col-span-1 sm:block"></div>  
           <div class="col-span-12 sm:col-span-5">
@@ -101,7 +100,7 @@
         <div class="grid grid-cols-12 my-6">
           <div class="hidden col-span-1 sm:block"></div>  
           <div class="col-span-12 sm:col-span-6">
-            <p class="fs-heading-4 fw-500 word-spacing">25+ years of experience, with the knowledge and determination to see your project succeed.</p>
+            <p class="fs-heading-4 fw-400 word-spacing">25+ years of experience, with the knowledge and determination to see your project succeed.</p>
           </div>
           <div class="hidden col-span-5 sm:block"></div> 
         </div>
@@ -116,8 +115,8 @@
             </a>
           </div>
           <div class="hidden col-span-1 sm:block"></div> 
-        </div>
-      </container>
+        
+      </container> 
     </section>
 
 

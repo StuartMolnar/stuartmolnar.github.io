@@ -75,6 +75,8 @@ const heroSection = document.getElementById('index-hero');
 function setVideoHeight() {
   const navbarHeight = navbar.offsetHeight;
   const viewportHeight = window.innerHeight;
+  console.log(navbarHeight);
+  console.log(viewportHeight);
   heroSection.style.height = `${viewportHeight - navbarHeight}px`;
 }
 
@@ -190,18 +192,3 @@ document.addEventListener('keydown', function(event) {
 });
 
 
-
-window.addEventListener('DOMContentLoaded', function() {
-  const videoContainer = document.querySelector('.video-container');
-const indexHero = document.querySelector('#index-hero');
-  
-  // Set the initial max-height of index-content
-  const videoContainerHeight = videoContainer.offsetHeight;
-  indexHero.style.maxHeight = `${videoContainerHeight}px`;
-  
-  // Listen for the resize event and update max-height accordingly
-  window.addEventListener('resize', function() {
-    const videoContainerHeight = videoContainer.offsetHeight;
-    indexHero.style.maxHeight = `${videoContainerHeight}px`;
-  });
-});
