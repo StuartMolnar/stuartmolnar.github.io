@@ -72,11 +72,10 @@ const navbar = document.getElementById('navbar-full');
 const videoContainer = document.querySelector('.video-container');
 const heroSection = document.getElementById('index-hero');
 
+const navbarHeight = navbar.offsetHeight;
+
 function setVideoHeight() {
-  const navbarHeight = navbar.offsetHeight;
   const viewportHeight = window.innerHeight;
-  console.log(navbarHeight);
-  console.log(viewportHeight);
   heroSection.style.height = `${viewportHeight - navbarHeight}px`;
 }
 
