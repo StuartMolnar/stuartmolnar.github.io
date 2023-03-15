@@ -9,14 +9,15 @@
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
-    <link rel="preload" href="css/build.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="css/build.css" rel="stylesheet"></noscript>
+    <link rel="preload" href="css/tailwind.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="css/tailwind.css" rel="stylesheet"></noscript>
     
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
 
     <script defer src="js/navbar.js"></script>
-    <script defer src="js/services.js"></script>
+    <script src="js/services.js"></script>
+    <script async src="js/services-lightbox.js"></script>
 </head>
 <body onload="changeService('geology'); initNavbarSpacer(); initNavbarMinimizer(); initMobileMenu(); " class="min-h-screen bg-white-off text-black-accent fs-body">
 
@@ -286,15 +287,6 @@
         <div class="hidden col-span-1 sm:block"></div>
 
         <div id="services-image-grid" class="col-span-12 gap-2.5 mx-6 sm:col-span-10 columns-2 sm:columns-4 lg:columns-5 sm:mx-0">
-            <!-- <img class="object-cover w-full mb-2.5" src="images/geology/1.jpeg" />
-            <img class="object-cover w-full mb-2.5" src="images/geology/2.jpeg" />
-            <img class="object-cover w-full mb-2.5" src="images/geology/3.jpeg" />
-            <img class="object-cover w-full mb-2.5" src="images/geology/4.jpeg" />
-            <img class="object-cover w-full mb-2.5" src="images/geology/5.jpeg" />
-            <img class="object-cover w-full mb-2.5" src="images/geology/6.jpeg" />
-            <img class="object-cover w-full mb-2.5" src="images/geology/7.jpeg" />
-            <img class="object-cover w-full mb-2.5" src="images/geology/8.jpeg" />
-            <img class="object-cover w-full mb-2.5" src="images/geology/9.jpeg" /> -->
         </div>
 
         <div class="hidden col-span-1 sm:block"></div>
@@ -371,7 +363,6 @@
       <p>Copyright Rio Minerals Ltd. All Rights Reserved © 2023</p>
     </div>
   </footer>
-
 
 
 </body>  	

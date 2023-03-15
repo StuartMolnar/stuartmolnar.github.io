@@ -10,8 +10,8 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     
 
-    <link rel="preload" href="css/build.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="css/build.css" rel="stylesheet"></noscript>
+    <link rel="preload" href="css/tailwind.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="css/tailwind.css" rel="stylesheet"></noscript>
 
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <script defer src="js/navbar.js"></script>
     <script defer src="js/index.js"></script>
+    <script async src="js/index-carousel.js"></script>
 </head>
 <body onload="initMobileMenu(); initNavbarSpacer(); initNavbarMinimizer();" class="min-h-screen max-w-[100%] bg-white-off text-black-accent fs-body">
   <div id="navbar-spacer"></div>
@@ -491,26 +492,31 @@
 
 
     <section id="carousel">
-      <div id="carousel-images" class="relative flex mb-12 carousel-images">
+      <div class="relative flex mb-12">
         <p id="prev-btn" onclick="prevImage()" class="absolute left-0 pl-6 transform sm:ml-6 carousel-nav-btn top-1/2">❮</p> 
-        <div class="sm:w-1/3 w-full carousel-cell animate__animated h-[300px] sm:h-[500px]">
-          <img src="images/Unsorted/geochem-11.jpeg" alt="" class="object-cover w-full" onclick="showLightbox(event)">
-        </div>
-        <div class="hidden sm:block sm:w-1/3 w-full carousel-cell animate__animated h-[500px]">
-          <img src="images/Unsorted/crew-8.jpeg" alt="" class="object-cover w-full" onclick="showLightbox(event)">
-        </div>
-        <div class="hidden sm:block w-full sm:w-1/3 carousel-cell animate__animated h-[500px]">
-          <img src="images/Unsorted/P2120014.jpeg" alt="" class="object-cover w-full" onclick="showLightbox(event)">
-        </div>
+        <div id="carousel-images" class="flex w-full carousel-images">
+        </div>        
         <p id="next-btn" onclick="nextImage()" class="absolute right-0 pr-6 transform sm:mr-6 carousel-nav-btn top-1/2">❯</p>
       </div>
     </section>
-
+    
     <!-- Lightbox container -->
     <div id="lightbox" class="lightbox-container">
+      <button class="lightbox-nav-button lightbox-nav-button-prev" aria-label="Previous Image">
+        <p>❮</p>
+      </button>
+      <button class="lightbox-nav-button lightbox-nav-button-next" aria-label="Next Image">
+        <p>❯</pi>
+      </button>
+      <div id="lightbox-count"></div>
       <img src="" alt="Lightbox Image">
+      <button class="lightbox-close-button" aria-label="Close Lightbox">
+        &times;
+      </button>
     </div>
 
+
+    
     <container class="hidden sm:block">
       <a id="back-to-top-button" href="#" class="items-center justify-center hidden col-span-3 gap-2 button-primary">
         <p>Back to Top</p>
