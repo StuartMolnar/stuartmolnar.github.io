@@ -41,17 +41,13 @@ function loadImages(){
 
   for (let i = 0; i < carouselImages.length; i++) {
     const imageSrc = carouselImages[i];
-    console.log(imageSrc);
 
     const div = document.createElement('div');
     if (window.innerWidth <= 640 && i > 0) {
-      console.log("hidden mobile");
       div.className = "hidden carousel-cell animate__animated h-[500px]";
     } else if (i > 2) {
-      console.log("hidden default");
       div.className = "hidden carousel-cell animate__animated h-[500px]";
     } else {
-      console.log('not hidden');
       div.className = "carousel-cell animate__animated h-[500px]";
     }
     const img = document.createElement('img');
@@ -72,21 +68,31 @@ function getVisibleImagesCount() {
 
 
 /* --- update carousel on resize --- */
-// function onResize() {
-//     const carouselCells = document.querySelectorAll('#carousel-images .carousel-cell');
-//     const visibleImagesCount = getVisibleImagesCount();
-  
-//     for (let i = 0; i < carouselCells.length; i++) {
-//       if (i < visibleImagesCount) {
-//         carouselCells[i].classList.remove('hidden');
-//       } else {
-//         carouselCells[i].classList.add('hidden');
-//       }
-//     }
-//   }
-  
-  
-//   window.addEventListener('resize', onResize);
+let currentFirstVisibleIndex = 0;
+let prevVisibleImagesCount = getVisibleImagesCount();
+
+function onResize() {
+  const newVisibleImagesCount = getVisibleImagesCount();
+
+  // Only update the visible cells if the visible images count has changed
+  if (newVisibleImagesCount !== prevVisibleImagesCount) {
+    const carouselCells = document.querySelectorAll('#carousel-images .carousel-cell');
+
+    for (let i = 0; i < carouselCells.length; i++) {
+      if (i >= currentFirstVisibleIndex && i < currentFirstVisibleIndex + newVisibleImagesCount) {
+        carouselCells[i].classList.remove('hidden');
+      } else {
+        carouselCells[i].classList.add('hidden');
+      }
+    }
+
+    // Update the previous visible images count
+    prevVisibleImagesCount = newVisibleImagesCount;
+  }
+}
+
+window.addEventListener('resize', onResize);
+
 
 
 /* ----- carousel navigation ----- */
@@ -104,6 +110,7 @@ function prevImage() {
     }
 
     if (firstVisibleIndex > 0) {
+        currentFirstVisibleIndex--;
         carouselCells[firstVisibleIndex - 1].classList.remove('hidden');
         setTimeout(() => {
           carouselCells[firstVisibleIndex + visibleImagesCount - 1].classList.add('hidden');
@@ -124,6 +131,7 @@ function nextImage() {
     }
 
     if (lastVisibleIndex < carouselCells.length - 1) {
+        currentFirstVisibleIndex++;
         carouselCells[lastVisibleIndex + 1].classList.remove('hidden');
         setTimeout(() => {
           carouselCells[lastVisibleIndex - visibleImagesCount + 1].classList.add('hidden');
@@ -131,23 +139,6 @@ function nextImage() {
       }
 }
   
-
-/* ----- carousel tap ----- */
-
-if (window.innerWidth <= 640) {
-  const hammer = new Hammer(carousel);
-
-  hammer.on('tap', function(event) {
-    const carouselWidth = carousel.offsetWidth;
-    const tapX = event.center.x;
-  
-    if (tapX < carouselWidth * 0.3) {
-      prevImage();
-    } else if (tapX > carouselWidth * 0.7) {
-      nextImage();
-    }
-  });
-}
 
 
 /* ----- lightbox ----- */
@@ -349,3 +340,21 @@ function fadeOut(element, direction, callback, countElement) {
   }
 }
 
+
+
+/* ----- carousel tap ----- */
+
+if (window.innerWidth <= 640) {
+    const hammer = new Hammer(carousel);
+  
+    hammer.on('tap', function(event) {
+      const carouselWidth = carousel.offsetWidth;
+      const tapX = event.center.x;
+    
+      if (tapX < carouselWidth * 0.3) {
+        prevImage();
+      } else if (tapX > carouselWidth * 0.7) {
+        nextImage();
+      }
+    });
+  }
