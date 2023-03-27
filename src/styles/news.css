@@ -1,0 +1,33 @@
+/* --- custom backgrounds --- */
+
+.news-header-bg {
+    background: linear-gradient(99.98deg, rgba(0, 0, 0, 0.8) 8.86%, rgba(0, 0, 0, 0.4) 74.38%, rgba(0, 0, 0, 0) 100%), url('src/assets/news/news-header-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.news-articles-bg {
+    background: url('src/assets/news/news-section-bg.png');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+/* --- year selection buttons --- */
+.year-active  {
+    position: relative;
+}
+
+.year-active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    @apply bg-gold;
+}
+
+
+/* --- animation --- */

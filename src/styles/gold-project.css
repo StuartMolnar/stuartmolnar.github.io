@@ -1,0 +1,14 @@
+.projects-header-bg {
+    background: linear-gradient(99.98deg, rgba(0, 0, 0, 0.8) 8.86%, rgba(0, 0, 0, 0.4) 74.38%, rgba(0, 0, 0, 0) 100%), url('src/assets/gold-project/header-section-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.info-section-img {
+    background: url('src/assets/gold-project/info-section-right.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
